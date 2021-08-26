@@ -8,5 +8,7 @@
             "email": "arnautov.dmitry2015@yandex.ru"
         }
     ],
-    "require": {}
+    "require": {
+        "slim/slim": "4.*"
+    }
 }
