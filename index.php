@@ -12,9 +12,11 @@ $view = new Environment($loader);
 
 $app = AppFactory::create();
 
-$app->get('/{name}', function (Request $request, Response $response, $args) {
-    $name = $args['name'];
-    $response->getBody()->write("Hello, {$name}");
+$app->get('/about/{name}', function (Request $request, Response $response, $args) use ($view) {
+    $body = $view->render('about.twig', [
+        'name' => $args['name']
+    ]);
+    $response->getBody()->write($body);
     return $response;
 });
 $app->get('/', function (Request $request, Response $response, $args) use ($view) {
