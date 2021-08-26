@@ -1,0 +1,12 @@
+{
+    "name": "dima/bloggy",
+    "description": "some interesting blog",
+    "type": "stable",
+    "authors": [
+        {
+            "name": "arnautovd",
+            "email": "arnautov.dmitry2015@yandex.ru"
+        }
+    ],
+    "require": {}
+}
