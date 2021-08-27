@@ -19,10 +19,20 @@ $app->get('/about/{name}', function (Request $request, Response $response, $args
     $response->getBody()->write($body);
     return $response;
 });
+
 $app->get('/', function (Request $request, Response $response, $args) use ($view) {
     $body = $view->render('index.twig');
     $response->getBody()->write($body);
     return $response;
 });
+
+$app->get('/{url_key}', function (Request $request, Response $response, $args) use ($view) {
+    $body = $view->render('post.twig', [
+        'url_key' => $args['url_key']
+    ]);
+    $response->getBody()->write($body);
+    return $response;
+});
+
 
 $app->run();
